@@ -36,9 +36,6 @@ app.use(cookieParser());
 app.get('/', function(req, res) {
   // res.render('index', { currentTime: new Date() });
   var getdata=getServerData();
-  res.send(getdata);
-
-
     var tasks = {
       table_a: function (callback) {
         getServerData(function (err, result) {
