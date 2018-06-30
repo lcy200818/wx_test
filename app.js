@@ -36,28 +36,32 @@ app.use(cookieParser());
 app.get('/', function(req, res) {
   // res.render('index', { currentTime: new Date() });
   var getdata=getServerData();
-    var tasks = {
-      table_a: function (callback) {
-        getServerData(function (err, result) {
-          if (err) {
-            // 异常后调用callback并传入err
-            callback(err);
-          } else {
-            console.log("执行成功");
-            // 执行完成后也要调用callback，不需要参数
-            callback(result);
-          }
-        });
-      },
-    };
-    //
-    async.series(tasks, function (err, results) {
-      if (err) {
-        res.send({ "status": "fail" });
-      } else {
-        res.send(results);
-      }
-    });
+  if(getdata!=null)
+    res.send(results);
+  else
+    res.send(results);
+    // var tasks = {
+    //   table_a: function (callback) {
+    //     getServerData(function (err, result) {
+    //       if (err) {
+    //         // 异常后调用callback并传入err
+    //         callback(err);
+    //       } else {
+    //         console.log("执行成功");
+    //         // 执行完成后也要调用callback，不需要参数
+    //         callback(result);
+    //       }
+    //     });
+    //   },
+    // };
+    // //
+    // async.series(tasks, function (err, results) {
+    //   if (err) {
+    //     res.send({ "status": "fail" });
+    //   } else {
+    //     res.send(results);
+    //   }
+    // });
 
 });
 
