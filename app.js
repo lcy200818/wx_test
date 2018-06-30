@@ -34,8 +34,28 @@ app.use(cookieParser());
 
 app.get('/', function(req, res) {
   // res.render('index', { currentTime: new Date() });
-  res.send("hello world");
+  var getdata=getServerData();
+  res.send(getdata);
 });
+
+function getServerData() {
+
+    console.log("getServerData");
+    var temp = moment().format('YYYYMMDDHHmmssSSS');
+    request.post(
+        'http://www.zzj-ppai.com:2000/zzj/real-time/data',
+        { json: { "SN": new Buffer("2017000000000128").toString('base64'), "CMD": "GetData" } },
+        function (error, response, body) {
+
+            if (!error && response.statusCode == 200) {
+              return body;
+            }
+            else {
+              return null;
+            }
+        }
+    );
+}
 
 // 可以将一类的路由单独保存在一个文件中
 app.use('/todos', require('./routes/todos'));
