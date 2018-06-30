@@ -1,0 +1,126 @@
+{
+  "_args": [
+    [
+      "leanengine",
+      "C:\\Users\\chun"
+    ]
+  ],
+  "_from": "leanengine@latest",
+  "_id": "leanengine@3.2.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/leanengine",
+  "_nodeVersion": "10.1.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/leanengine_3.2.0_1526615980726_0.31139931349522443"
+  },
+  "_npmUser": {
+    "email": "jysperm@gmail.com",
+    "name": "jysperm"
+  },
+  "_npmVersion": "5.6.0",
+  "_phantomChildren": {
+    "ms": "2.0.0"
+  },
+  "_requested": {
+    "name": "leanengine",
+    "raw": "leanengine",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/leanengine/-/leanengine-3.2.0.tgz",
+  "_shasum": "98574a598420ce75b3d5b154305caf1c06f0e271",
+  "_shrinkwrap": null,
+  "_spec": "leanengine",
+  "_where": "C:\\Users\\chun",
+  "author": {
+    "email": "support@leancloud.rocks",
+    "name": "LeanCloud"
+  },
+  "bugs": {
+    "url": "https://github.com/leancloud/leanengine-node-sdk/issues"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "//^((?!(node_modules|test)).)*$/"
+    }
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "connect": "^3.5.0",
+    "connect-timeout": "^1.8.0",
+    "cookies": "^0.6.2",
+    "debug": "^2.6.0",
+    "leancloud-cors-headers": "^0.1.0",
+    "on-headers": "^1.0.1",
+    "underscore": "^1.8.3"
+  },
+  "description": "LeanCloud LeanEngine Node.js SDK.",
+  "devDependencies": {
+    "blanket": "^1.2.3",
+    "es6-promise": "^4.2.4",
+    "express": "^4.14.1",
+    "mocha": "^3.2.0",
+    "npm-run-all": "^4.1.2",
+    "should": "^11.2.0",
+    "supertest": "^3.0.0"
+  },
+  "directories": {},
+  "dist": {
+    "fileCount": 1060,
+    "integrity": "sha512-Rv96Y4KJIOnnBqlM0+yVhluv+aA1JRraTTfTHVTTXNcRuSj5o94AwYTGQN5ZrjUWv2rhxdbMVCTKNRktcMoxVw==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa/k+tCRA9TVsSAnZWagAAL+kP+gK1NtWgjCmLOr92jnY5\nkKKC4Hcmk3vbh37XibzE2WSDQ8c89vqufD6VZISe28OKrMPziQHQQ9tPpQDC\niWzNbSoajRQYuYn1+i3yQcbX6fZoDooopvdNhqe4kVlZJ8gh4B+v50tzK+7d\n0da2MVfa/AxIDlhePyWfmZOqS84YlTGh4I4h/bXqpI0mG3bSOevbzUXTuZd9\n49a8GOugKe3Uw5/8jj3FvXVEXil36zEGj6+39rkGF8nT+7yY047FP3Z3/WtM\nb61bm5PPBv3jLR2qJ+8+QJaYMRLrs/wU2Ij2DR1uheebsThqdjvyRYv1kGtv\nYNnYKV4sWfDnHna+ZPr6b7/jeQ5Pv/Yhq1PTjNZwOIWjC8FcEGMY8lpdyWLc\nWOi5FbX49dgF9X0wWQwm4lIegL3U3hwNQqVjV6YMk+3wjiwzaN5kSUmQxjV2\nPqw1aqc2z0JZ1972i9vq2RQovtraWeejaoYC4lHhnJxqfrxcGslvAgbJeLL6\nGiI7WdJcdBnFHeqtGTAeoOdQZEus5AhGyibn645ULBn5YoYh1Jvb2/vo6gjm\n/s5AIq92gSWGCWNdqrx9px4xYJuXT/K6F78B7XHkVTVlOcVD0uHzYgfmbZVZ\n39is9iKJhtdraWgCt0wZjcDEQTYfN2yCJo8LH8TkFqGN77ZY1TdUr5t9Qmol\nwRuo\r\n=RgGP\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "98574a598420ce75b3d5b154305caf1c06f0e271",
+    "tarball": "https://registry.npmjs.org/leanengine/-/leanengine-3.2.0.tgz",
+    "unpackedSize": 4886173
+  },
+  "engines": {
+    "node": ">=4.4.7"
+  },
+  "gitHead": "2723234c3a5e9ea821a1f7b4ce336202b36b6f6d",
+  "homepage": "https://github.com/leancloud/leanengine-node-sdk#readme",
+  "keywords": [
+    "leancloud",
+    "leanengine",
+    "cloud",
+    "express",
+    "koa"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "xzhuang@avos.com",
+      "name": "avos"
+    },
+    {
+      "email": "jysperm@gmail.com",
+      "name": "jysperm"
+    }
+  ],
+  "name": "leanengine",
+  "optionalDependencies": {},
+  "peerDependency": {
+    "leancloud-storage": "^3.0.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leancloud/leanengine-node-sdk.git"
+  },
+  "scripts": {
+    "test": "npm install --no-save leancloud-storage@3 && npm-run-all test-tsd test-express test-koa1 test-koa2",
+    "test-express": "mocha test test/express",
+    "test-koa1": "npm install --no-save leancloud-storage@3 koa@1 koa-bodyparser@2 && env FRAMEWORK=koa KOA_VER=1 mocha test test/koa",
+    "test-koa2": "npm install --no-save leancloud-storage@3 koa@2 koa-bodyparser@4 && env FRAMEWORK=koa KOA_VER=2 mocha test test/koa",
+    "test-tsd": "tsc leanengine.d.ts"
+  },
+  "types": "./leanengine.d.ts",
+  "typings": "./leanengine.d.ts",
+  "version": "3.2.0"
+}
