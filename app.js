@@ -35,34 +35,26 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.get('/', function(req, res) {
-  // res.render('index', { currentTime: new Date() });
-  // var getdata=getServerData();
-  // if(getdata!=null)
-  //   res.send(results);
-  // else
-  //   res.send(results);
-    var tasks = {
-      table_a: function (callback) {
-        getServerData(function (err, result) {
-          if (err) {
-            // 异常后调用callback并传入err
-            callback(err);
-          } else {
-            console.log("执行成功");
-            // 执行完成后也要调用callback，不需要参数
-            callback(result);
+
+async.series({
+	one: function(callback){
+        request.post('http://www.zzj-ppai.com:2000/zzj/real-time/data',{ json: { "SN": new Buffer("2018100000000116").toString('base64'), "CMD": "GetData" } },
+        function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+            callback(null,body);
           }
-        });
-      },
-    };
-    //
-    async.series(tasks, function (err, results) {
-      if (err) {
-        res.send({ "status": "fail" });
-      } else {
+          else {
+            callback(null,null);
+          }
+        }
+      );},
+    },function(err, results) {
+      if(err){
+        res.send('error');
+      }else{
         res.send(results);
       }
-    });
+});
 
 });
 
