@@ -34,51 +34,36 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.get('/', function(req, res) {
+app.get('/realtime/data', function (req, res) {
 
-async.series({
-	one: function(callback){
-        request.post('http://www.zzj-ppai.com:2000/zzj/real-time/data',{ json: { "SN": new Buffer("2018100000000116").toString('base64'), "CMD": "GetData" } },
+  async.series({
+    one: function (callback) {
+      request.post('http://140.143.27.65:2000/get/data', { json: { "SN": new Buffer("2018100000000116").toString('base64'), "CMD": "Get_RTData","TYPE":3 } },
         function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            callback(null,body);
+            callback(null, body);
           }
           else {
-            callback(null,null);
+            callback(null, null);
           }
         }
-      );},
-    },function(err, results) {
-      if(err){
-        res.send('error');
-      }else{
-        res.send(results);
-      }
-});
+      );
+    },
+  }, function (err, results) {
+    if (err) {
+      res.send('error');
+    } else {
+      res.send(results);
+    }
+  });
 
 });
 
-function getServerData() {
-
-    request.post(
-        'http://www.zzj-ppai.com:2000/zzj/real-time/data',
-        { json: { "SN": new Buffer("2017000000000128").toString('base64'), "CMD": "GetData" } },
-        function (error, response, body) {
-
-            if (!error && response.statusCode == 200) {
-              return body;
-            }
-            else {
-              return null;
-            }
-        }
-    );
-}
 
 // 可以将一类的路由单独保存在一个文件中
 app.use('/todos', require('./routes/todos'));
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   // 如果任何一个路由都没有返回响应，则抛出一个 404 异常给后续的异常处理器
   if (!res.headersSent) {
     var err = new Error('Not Found');
@@ -88,7 +73,7 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   if (req.timedout && req.headers.upgrade === 'websocket') {
     // 忽略 websocket 的超时
     return;
