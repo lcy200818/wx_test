@@ -60,34 +60,31 @@ app.get('/realtime/data', function (req, res) {
 });
 
 app.post('/get/data', function (req, res) {
-  //
-  var cmd = req.body.CMD;//CMD
-  var appid = req.body.APPID;//
-  var phone = req.body.PHONE;//
-  async.series({
-    one: function (callback) {
-      request.post('http://140.143.27.65:2000/get/data', { json: { "CMD": cmd, "APPID": appid, "PHONE": phone } },
-        function (error, response, body) {
-          if (!error && response.statusCode == 200) {
-            callback(null, body);
-          }
-          else {
-            callback(null, null);
-          }
+    //
+    async.series({
+        one: function (callback) {
+            request.post('http://140.143.27.65:2000/get/data', { json: req.body },
+                function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        callback(null, body);
+                    }
+                    else {
+                        callback(null, null);
+                    }
+                }
+            );
+
+        },
+    }, function (err, results) {
+        if (err) {
+            res.send('error');
         }
-      );
+        else {
+            res.send(results);
+        }
 
-    },
-  }, function (err, results) {
-    if (err) {
-      res.send('error');
-    }
-    else {
-      res.send(results);
-    }
-
-    console.log(results);
-  });
+        console.log(results);
+    });
 
 });
 
